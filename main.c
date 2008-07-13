@@ -24,7 +24,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $Id: main.c 41 2008-07-03 00:21:57Z  $ 
+ * $Id: main.c 43 2008-07-13 15:51:32Z  $ 
  */
 
 
@@ -398,10 +398,14 @@ void loop(void)
 
 }
 
+#ifndef CONFIG_DIR
+#define CONFIG_DIR "/usr/local/etc/mdnssdd.d"
+#endif
+
 int main (int argc, char * const argv[])
 {
 	int c;
-	const char *root = ".";
+	const char *root = CONFIG_DIR;
 	
 	init_list();
 	
